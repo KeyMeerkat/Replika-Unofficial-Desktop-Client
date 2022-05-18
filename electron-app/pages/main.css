@@ -1,0 +1,106 @@
+/*
+    This stylesheet is for styling the application and settings page.
+    For the stylesheets (themes) that gets injected into the Replika Web Interface, see the 'themes' folder.
+*/
+:root {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --btn-hover-color: #c6c6c6;
+}
+
+@media screen and (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #1e1e1e;
+        --text-color: #c8c8c8;
+        --btn-hover-color: #2a2a2a;
+    }
+
+    #app_header button img {
+        filter: invert(100%);
+    }
+}
+
+
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: none;
+    overflow: hidden;
+    margin: 0px;
+}
+
+#app_window {
+    width: 398px; /* 2px less to allow for border radius */
+    height: 700px;
+    overflow: hidden;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border-radius: 8px;
+    margin: 0px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #808080;
+}
+
+#app_header {
+    background-color: inherit;
+    color: var(--text-color);
+    border-bottom: 0.5px solid #808080;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin: 0px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 15px;
+    user-select: none;
+    -webkit-app-region: drag;
+}
+
+#app_header span {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#app_header button {
+    -webkit-app-region: no-drag;
+}
+
+/*
+    Buttons
+*/
+.button_small {
+    background: inherit;
+    border-radius: 5px;
+    border: none;
+    width: 30px;
+    height: 30px;
+    transition-duration: 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+}
+
+.button_small img {
+    width: 20px;
+    height: 20px;
+}
+
+.button_small:hover {
+    background-color: var(--btn-hover-color);
+}
+
+.button_small:focus {
+    background-color: #999999;
+}

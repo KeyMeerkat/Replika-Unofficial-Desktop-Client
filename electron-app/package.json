@@ -1,0 +1,29 @@
+{
+  "name": "replika-unofficial-desktop-client",
+  "version": "1.0.0",
+  "description": "An unoffical desktop client to interect with your Replika from replika.ai",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KeyMeerkat/Replika-Unofficial-Desktop-Client.git"
+  },
+  "keywords": [
+    "replika",
+    "replika.ai",
+    "unoffical",
+    "app"
+  ],
+  "author": "KeyMeerkat",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/KeyMeerkat/Replika-Unofficial-Desktop-Client/issues"
+  },
+  "homepage": "https://github.com/KeyMeerkat/Replika-Unofficial-Desktop-Client#readme",
+  "devDependencies": {
+    "electron": "^18.1.0"
+  }
+}
