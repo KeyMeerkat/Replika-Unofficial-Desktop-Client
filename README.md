@@ -9,7 +9,7 @@ So far this project is in it's very early stages of development, I will be setti
 
 ### Features (WIP)
 - [x] Interact with your Replika via embedded web version.
-- [ ] Ajust app settings
+- [ ] Custom themes
 - [ ] Better (and free) voice calls
 - [ ] Wakeword detection
 
