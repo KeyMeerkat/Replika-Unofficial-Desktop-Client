@@ -1,6 +1,7 @@
 // Inport modules
 const { app, BrowserWindow, BrowserView, ipcMain, screen } = require('electron')
 const path = require('path')
+const fs = require('fs')
 
 // Create browser window
 const createWindow = () => {
@@ -38,10 +39,17 @@ const createWindow = () => {
     const view = new BrowserView()
     win.setBrowserView(view)
     view.setBounds({ x: 1, y: 40, width: 398, height: 660 })
-    view.webPreferences = {
-        preload: path.join(__dirname, 'preload.js')
-    }
     view.webContents.loadURL('https://my.replika.com/')
+
+    // Inject custom CSS (themes)
+    view.webContents.on('did-finish-load', () => {
+        fs.readFile("themes/modern-adaptive.css", 'utf8', function (err, data) {
+            if (err) {
+                return console.log(err)
+            }
+            view.webContents.insertCSS(data)
+        })
+    })
 }
 
 // Quit the app when all windows are closed (Windows & Linux)

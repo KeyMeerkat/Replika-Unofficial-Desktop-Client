@@ -1,9 +1,0 @@
-/*
-    This theme makes the Replika web interface look more modern.
-    If you would like to know how to create your own theme, see 'README.md' in the themes folder.
-*/
-
-/* Chat messages background */
-.ChatMessages__ChatMessagesRoot-sc-10qvl13-0 jeOjkR ChatLayout__StyledChatMessages-ztbuvw-9 dORTFh {
-    background: linear-gradient(rgb(0 100 60) 0%, rgb(32, 36, 112) 100%);
-}

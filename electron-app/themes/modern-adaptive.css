@@ -1,0 +1,38 @@
+/*
+    This theme makes the Replika web interface look more modern. It is adaptive meaning it supports light/dark mode.
+    If you would like to know how to create your own theme, see README.md in the themes folder.
+*/
+:root {
+    --bg-color-primary: #ffffff;
+    --text-color-primary: #000000;
+    --btn-hover-color-primary: #c6c6c6;
+}
+
+@media screen and (prefers-color-scheme: dark) {
+    :root {
+        --bg-color-primary: #1e1e1e;
+        --text-color-primary: #c8c8c8;
+        --btn-hover-color-primary: #2a2a2a;
+    }
+}
+
+/* Chat messages background */
+.jeOjkR {
+    background: var(--bg-color-primary) !important;
+}
+
+/* Replika chat bubble */
+.faiZcc {
+    background-color: #505050 !important;
+}
+.faiZcc > svg {
+    color: #505050 !important;
+}
+
+/* User chat buuble */
+.fqOasY {
+    background-color: #002fb2 !important;
+}
+.fqOasY > svg {
+    color: #002fb2 !important;
+}

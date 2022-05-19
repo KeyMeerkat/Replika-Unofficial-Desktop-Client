@@ -1,4 +1,6 @@
-// Used to control custom window buttons
+/* 
+ *   renderer.js - Used to control custom window buttons
+ */
 const { ipcRenderer: ipc } = require('electron');
 
 // Close

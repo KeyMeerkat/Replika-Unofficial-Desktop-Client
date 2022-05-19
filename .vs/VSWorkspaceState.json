@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\electron-app"
+    "\\electron-app",
+    "\\electron-app\\pages",
+    "\\electron-app\\themes"
   ],
   "PreviewInSolutionExplorer": false
 }
