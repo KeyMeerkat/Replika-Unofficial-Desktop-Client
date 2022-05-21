@@ -4,6 +4,7 @@
 */
 :root {
     --bg-color-primary: #ffffff;
+    --bg-color-on-primary: #d1d1d1;
     --text-color-primary: #000000;
     --btn-hover-color-primary: #c6c6c6;
 }
@@ -11,10 +12,15 @@
 @media screen and (prefers-color-scheme: dark) {
     :root {
         --bg-color-primary: #1e1e1e;
+        --bg-color-on-primary: #282828;
         --text-color-primary: #c8c8c8;
         --btn-hover-color-primary: #2a2a2a;
     }
 }
+
+/*
+    Chat and messages
+*/
 
 /* Chat messages background */
 .jeOjkR {
@@ -35,4 +41,61 @@
 }
 .fqOasY > svg {
     color: #002fb2 !important;
+}
+
+/* Input background */
+.kvjOkJ, .hodOVu, .kvdPWV, .cIjITQ {
+    background-color: var(--bg-color-on-primary) !important;
+    color: var(--text-color-primary) !important;
+}
+
+/* Suggestion bubbles */
+.kWZNWV {
+    background-color: var(--bg-color-on-primary) !important;
+    color: var(--text-color-primary) !important;
+}
+
+
+/*
+    Profile
+*/
+
+/* Profile aside background */
+.iidWoH {
+    background-color: var(--bg-color-primary) !important;
+}
+
+/* Profile -> Memory & Diary */
+.hkiqG {
+    background-color: var(--bg-color-primary) !important;
+}
+
+
+/*
+    Replika Settings
+*/
+
+/* Settings aside background */
+.fBCfWH {
+    background-color: var(--bg-color-primary) !important;
+}
+
+/* Settings -> My Profile */
+.jfmlpm {
+    background-color: var(--bg-color-primary) !important;
+}
+
+/* Settings -> Replika Profile */
+.bQYZve {
+    background-color: var(--bg-color-primary) !important;
+}
+
+
+/*
+    Shop
+*/
+
+/* Item Dialog */
+.binyFC {
+    background-color: var(--bg-color-on-primary) !important;
 }

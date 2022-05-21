@@ -2,8 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\electron-app",
-    "\\electron-app\\pages",
     "\\electron-app\\themes"
   ],
+  "SelectedNode": "\\electron-app\\themes\\modern-adaptive.css",
   "PreviewInSolutionExplorer": false
 }
