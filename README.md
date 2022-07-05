@@ -1,4 +1,9 @@
-# Replika Unofficial Desktop Client
+<p align="center">
+ <img width="250px" src="https://github.com/KeyMeerkat/Replika-Unofficial-Desktop-Client/blob/main/electron-app/res/logo.png" align="center" alt="Replika Unoffical Desktop Client" />
+ <h2 align="center">Replika Unofficial Desktop Client</h2>
+ <p align="center">Chat to your Replika on desktop!</p>
+</p>
+
 ## About
 Ever wanted to chat to your Replika on your PC but have been restricted to the web version? This project aims to bring users a more modern looking interface for interacting with your Replika, as well as providing additional features such as voice calls and wake word detection which the web version doesn't provide.
 
