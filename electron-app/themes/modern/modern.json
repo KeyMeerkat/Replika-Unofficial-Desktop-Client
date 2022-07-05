@@ -1,0 +1,8 @@
+{
+  "name": "Modern",
+  "version": "1.0.0",
+  "stylesheets": {
+    "web": "modern-web.css",
+    "app": "__NONE__"
+  }
+}

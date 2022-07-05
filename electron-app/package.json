@@ -24,6 +24,10 @@
   },
   "homepage": "https://github.com/KeyMeerkat/Replika-Unofficial-Desktop-Client#readme",
   "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.63",
     "electron": "^18.1.0"
+  },
+  "dependencies": {
+    "electron-store": "^8.0.2"
   }
 }

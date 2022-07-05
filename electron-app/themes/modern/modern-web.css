@@ -1,0 +1,159 @@
+/*
+    This theme makes the Replika web interface look more modern. It is adaptive meaning it supports light/dark mode.
+    If you would like to know how to create your own theme, see README.md in the themes folder.
+*/
+:root {
+    --bg-color-primary: #ffffff;
+    --bg-color-on-primary: #d1d1d1;
+    --text-color-primary: #000000;
+    --btn-hover-color-primary: #c6c6c6;
+}
+
+@media screen and (prefers-color-scheme: dark) {
+    :root {
+        --bg-color-primary: #1e1e1e;
+        --bg-color-on-primary: #282828;
+        --text-color-primary: #c8c8c8;
+        --btn-hover-color-primary: #2a2a2a;
+    }
+}
+
+
+/*
+    IMPORTANT - Round borders to fit rounded app window
+*/
+.bHvWzV {
+    border-bottom-left-radius: 8px !important;
+    border-bottom-right-radius: 8px !important;
+}
+body {
+    background-color: #ffffff00 !important;
+}
+
+
+/*
+    Login screen
+*/
+/* Background */
+.bHvWzV {
+    background-color: var(--bg-color-primary) !important;
+}
+
+/* Text colours */
+.dSQumw {
+    color: var(--text-color-primary) !important;
+}
+.jiiHmw {
+    color: var(--text-color-primary) !important;
+}
+.kMlqCl {
+    color: var(--text-color-primary) !important;
+}
+.uDQqc {
+    color: var(--text-color-primary) !important;
+}
+.bSUkUA {
+    color: var(--text-color-primary) !important;
+}
+
+/* Back arrow */
+.fCLmkV {
+    color: var(--text-color-primary) !important;
+}
+
+/* Link colours */
+.IBEKP {
+    color: var(--text-color-primary) !important;
+}
+.kxQiTf {
+    color: var(--text-color-primary) !important;
+}
+
+/* Pronoun buttons */
+a.SolidButton-k70ct8-0, li.fhbCQE {
+    color: var(--text-color-primary) !important;
+    border-color: var(--bg-color-primary) !important;
+}
+
+
+/*
+    Chat and messages
+*/
+
+/* Chat messages background */
+.jeOjkR {
+    background: var(--bg-color-primary) !important;
+}
+
+/* Replika chat bubble */
+.faiZcc {
+    background-color: #505050 !important;
+}
+.faiZcc > svg {
+    color: #505050 !important;
+}
+
+/* User chat buuble */
+.fqOasY {
+    background-color: #002fb2 !important;
+}
+.fqOasY > svg {
+    color: #002fb2 !important;
+}
+
+/* Input background */
+.kvjOkJ, .hodOVu, .kvdPWV, .cIjITQ {
+    background-color: var(--bg-color-on-primary) !important;
+    color: var(--text-color-primary) !important;
+}
+
+/* Suggestion bubbles */
+.kWZNWV {
+    background-color: var(--bg-color-on-primary) !important;
+    color: var(--text-color-primary) !important;
+}
+
+
+/*
+    Profile
+*/
+
+/* Profile aside background */
+.iidWoH {
+    background-color: var(--bg-color-primary) !important;
+}
+
+/* Profile -> Memory & Diary */
+.hkiqG {
+    background-color: var(--bg-color-primary) !important;
+}
+
+
+/*
+    Replika Settings
+*/
+
+/* Settings aside background */
+.fBCfWH {
+    background-color: var(--bg-color-primary) !important;
+}
+
+/* Settings -> My Profile */
+.jfmlpm {
+    background-color: var(--bg-color-primary) !important;
+}
+
+/* Settings -> Replika Profile */
+.bQYZve {
+    background-color: var(--bg-color-primary) !important;
+}
+
+
+/*
+    Shop
+*/
+
+/* Item Dialog */
+.binyFC {
+    background-color: var(--bg-color-on-primary) !important;
+}

@@ -9,12 +9,3 @@ window.addEventListener('DOMContentLoaded', () => {
         if (element) element.innerText = text
     }    
 })
-
-window.webContents.on('did-finish-load', () => {
-    fs.readFile("themes/modern.css", 'utf8', function (err, data) {
-        if (err) {
-            return console.log(err)
-        }
-        webContents.fromId(3782).insertCSS(data)
-    })
-})

@@ -1,32 +1,31 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
-        <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+   <head>
+      <meta charset="UTF-8">
+      <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+      <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+      <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+      <!-- Load CSS -->
+      <link rel="stylesheet" href="main.css">
+      <title>Replika AI Desktop Client</title>
+   </head>
 
-        <!-- Load CSS -->
-        <link rel="stylesheet" href="main.css" />
-
-        <title>Replika Web Interface</title>
-    </head>
-
-    <body>
-        <div id="app_window">
-            <header id="app_header">
-                <button id="button_menu" class="button_small"><img src="icons/menu_FILL0_wght400_GRAD0_opsz48.svg" /></button>
-
-                <span>Replika AI Desktop</span>
-
-                <span>
-                    <button id="button_window_min" class="button_small"><img src="icons/minimize_FILL0_wght400_GRAD0_opsz48.svg" /></button>
-                    <button id="button_window_close" class="button_small"><img src="icons/close_FILL0_wght400_GRAD0_opsz48.svg" /></button>
-
-                </span>
-            </header>
-        </div>
-
-        <script src="../renderer.js"></script>
-    </body>
+   <body>
+      <div id="app_window">
+         <header id="app_header">
+            <!--<button id="button_menu" class="button_small"><img src="icons/menu_FILL0_wght400_GRAD0_opsz48.svg" /></button>
+               -->
+            <span>Replika AI Desktop</span>
+            <span>
+                <button id="button_window_min" class="button_small"><img src="icons/minimize_FILL0_wght400_GRAD0_opsz48.svg"></button>
+                <button id="button_window_close" class="button_small"><img src="icons/close_FILL0_wght400_GRAD0_opsz48.svg"></button>
+            </span>
+         </header>
+         <div id="loading-screen">
+            <span>Loading, please wait</span>
+            <div class="loader"></div>
+         </div>
+      </div>
+      <script src="../renderer.js"></script>
+   </body>
 </html>
