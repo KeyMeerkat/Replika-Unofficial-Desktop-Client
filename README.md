@@ -28,6 +28,7 @@ The Replika Unnoficial Desktop Client (RUDC) uses Node.js and Electron, making c
 **Dependencies**
 - Node.js
 - Electron
+- electron-store
 
 ## Credits
 - Luka Inc. - For providing us with incredible AI to talk to!
