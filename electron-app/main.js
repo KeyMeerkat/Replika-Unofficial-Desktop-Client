@@ -21,7 +21,7 @@ if (!store.has('selectedTheme')) {
 
 
 
-// Create browser window
+// Create window
 const createWindow = () => {
     global.win = new BrowserWindow({
         // Note: Any changes to window width/height should be updated in 'main.css'
@@ -103,6 +103,10 @@ app.whenReady().then(() => {
     })
 })
 
+
+
+
+
 // Activate custom window buttons
 ipcMain.on('close', () => {
     app.quit()
@@ -110,4 +114,61 @@ ipcMain.on('close', () => {
 ipcMain.on('minimize', () => {
     //BrowserView.getFocusedWindow().minimize();
     global.win.minimize();
+})
+
+
+
+/*
+    Settings
+*/
+const createSettingsWindow = () => {
+    global.settingsWin = new BrowserWindow({
+        // Note: Any changes to window width/height should be updated in 'main.css'
+        width: 400,
+        height: 504,
+        maximizable: false,
+        minimizable: false,
+        resizable: false,
+        frame: false,
+        radii: [8, 8, 8, 8],
+        transparent: true,
+        closable: true,
+        parent: global.win,
+        webPreferences: {
+            nodeIntegration: true,
+            contextIsolation: false,
+        }
+    })
+
+    // Remove the menu bar
+    global.settingsWin.removeMenu();
+
+    // Set the window position
+    let display = screen.getPrimaryDisplay();
+    let width = display.bounds.width;
+    let height = display.bounds.height;
+    global.settingsWin.setPosition(((width - 500) - 50), ((height - 800) - 50), false)
+
+    // Load html code that controls the custom window
+    global.settingsWin.loadFile('pages/settings.html')
+}
+
+// When settings button is clicked open new window
+var settingsIsOpen = false
+ipcMain.on('openAppSettings', () => {
+    // Create window only if there are no other open ones
+    if (settingsIsOpen == false) {
+        createSettingsWindow()
+        settingsIsOpen = true
+    }
+})
+
+// Activate custom window buttons for settings
+ipcMain.on('settings_close', () => {
+    global.settingsWin.close()
+    settingsIsOpen = false
+})
+ipcMain.on('settings_minimize', () => {
+    //BrowserView.getFocusedWindow().minimize();
+    global.settingsWin.minimize();
 })

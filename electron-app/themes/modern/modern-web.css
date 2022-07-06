@@ -11,7 +11,7 @@
 
 @media screen and (prefers-color-scheme: dark) {
     :root {
-        --bg-color-primary: #1e1e1e;
+        --bg-color-primary: #121212;
         --bg-color-on-primary: #282828;
         --text-color-primary: #c8c8c8;
         --btn-hover-color-primary: #2a2a2a;
@@ -76,6 +76,26 @@ body {
 a.SolidButton-k70ct8-0, li.fhbCQE {
     color: var(--text-color-primary) !important;
     border-color: var(--bg-color-primary) !important;
+}
+
+/* Imput fields */
+.gSCaFi {
+    background-color: var(--bg-color-on-primary) !important;
+    color: var(--text-color-primary) !important;
+}
+.gZtrbs {
+    color: var(--text-color-primary) !important;
+}
+.ddEMyP {
+    color: var(--text-color-primary) !important;
+}
+
+/* Buttons */
+.lnOleS {
+    background-color: #0000ff40 !important;
+}
+.fhbCQE {
+    background-color: #165fcd !important;
 }
 
 

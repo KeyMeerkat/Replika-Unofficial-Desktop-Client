@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+        <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+        <!-- Load CSS -->
+        <link rel="stylesheet" href="main.css">
+        <title>Replika AI Desktop Client - Settings</title>
+    </head>
+
+    <body>
+        <div id="settings_app_window">
+            <header id="app_header">
+                <span>Settings</span>
+                <span>
+                    <button id="button_settings_window_close" class="button_small"><img src="icons/close_FILL0_wght400_GRAD0_opsz48.svg"></button>
+                </span>
+            </header>
+
+            <div id="settings">
+                <h3>Colour Scheme</h3>
+                
+                <div id="colour-scheme-selector">
+                    <button id="colour-scheme-sas" class="button-square-large">
+                        <p>Same as System</p>
+                    </button>
+
+                    <button id="colour-scheme-light" class="button-square-large">
+                        <p>Light</p>
+                    </button>
+
+                    <button id="colour-scheme-dark" class="button-square-large">
+                        <p>Dark</p>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <script src="../renderer.js"></script>
+    </body>
+</html>
