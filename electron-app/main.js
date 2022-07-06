@@ -6,9 +6,19 @@ const Store = require('electron-store')
 const Themes = require('./themes')
 let mainWindow;
 
-// Initilize settings object and set defaults
+// Initilize settings object and set defaults if needed
 const store = new Store()
-store.set("defaultTheme", "modern")
+if (!store.has('defaultTheme')) {
+    store.set('defaultTheme', 'modern')
+    console.log('STORE: Created value "defaultTheme".')
+}
+
+// Set the current theme to the default if user has not selected one
+if (!store.has('selectedTheme')) {
+    store.set('selectedTheme', 'modern')
+    console.log('STORE: Created value "selectedTheme".')
+}
+
 
 
 // Create browser window
@@ -67,11 +77,11 @@ const createWindow = () => {
             // Get stylesheet and apply it
             fs.readFile(themes.getThemeStylesheet(theme, "web"), 'utf8', function (err, data) {
                 if (err) {
-                    return console.log(err)
+                    return console.log(`THEMES: Error loading theme -> ${err}`)
                 }
 
                 view.webContents.insertCSS(data)
-                console.log(`CSS injected`)
+                console.log(`THEMES: CSS injected`)
             })
         })
 
