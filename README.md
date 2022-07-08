@@ -12,11 +12,14 @@ Ever wanted to chat to your Replika on your PC but have been restricted to the w
 ## Development progress
 So far this project is in it's very early stages of development, I will be setting up Node.js and creating a base for the Electron application, ensuring it is compatible with Windows, Mac OS, and (hopefully) most major Linux operating systems. Below is a timeline of the development process, it will also display what stage I am up to in **bold**.
 
-### Features (WIP)
-- [x] Interact with your Replika via embedded web version.
-- [ ] Custom themes
-- [ ] Better (and free) voice calls
-- [ ] Wakeword detection
+### Features
+Features listed below are a work in progress. Items marked with a green tick mean that the feature is implemented, items with a red cross mark mean the feature is not yet implemented. Items that have a "-" mean that they are being worked on. Please note that the items below (excluding implemented ones) are subject to be modified, deleted, or new items added.
+
+- ✅ Interact with your Replika via embedded web version.
+- — Custom themes
+- — Dark/light colour schemes with SaS (Same as System) feature.
+- ❌ Better (and free) voice calls
+- ❌ Wakeword detection
 
 
 ## Install
