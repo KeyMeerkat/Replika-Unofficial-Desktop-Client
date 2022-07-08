@@ -1,5 +1,5 @@
 /* 
- *   renderer.js - Used to control custom window buttons
+ *   renderer.js - Used to control custom window buttons and settings window
  */
 const { ipcRenderer: ipc } = require('electron');
 
@@ -35,4 +35,17 @@ if (document.getElementById('button_settings_window_close')) {
     closeSettings.addEventListener('click', () => {
         ipc.send('settings_close');
     });
+}
+
+
+
+/*
+    Settings
+*/
+// MDC Dialogs
+const deleteThemeDialog = new mdc.dialog.MDCDialog(document.querySelector('#themeDeleteDialog'));
+
+function deleteTheme(name) {
+    document.getElementById('delete-theme-dialog-content').innerText = (`Delete the theme "${name}"?`);
+    deleteThemeDialog.open();
 }

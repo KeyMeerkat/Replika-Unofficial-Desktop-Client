@@ -2,17 +2,57 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+        <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
         <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
-        <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
-        <!-- Load CSS -->
-        <link rel="stylesheet" href="main.css">
+        <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">-->
         <title>Replika AI Desktop Client - Settings</title>
+
+        <!--Material Design + Icons-->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+        <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+        <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+
+        <link rel="stylesheet" href="main.css">
     </head>
 
     <body>
+
+        <!-- Alert Dialogs -->
+        <div class="mdc-dialog" id="themeDeleteDialog">
+            <div class="mdc-dialog__container">
+                <div class="mdc-dialog__surface"
+                role="alertdialog"
+                aria-modal="true"
+                aria-labelledby="Delete theme?">
+                <div class="mdc-dialog__content" id="delete-theme-dialog-content">
+                    Delete theme?
+                </div>
+                <div class="mdc-dialog__actions">
+                    <button type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="cancel">
+                    <div class="mdc-button__ripple"></div>
+                    <span class="mdc-button__label">Cancel</span>
+                    </button>
+                    <button type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="discard">
+                    <div class="mdc-button__ripple"></div>
+                    <span class="mdc-button__label">Delete</span>
+                    </button>
+                </div>
+                </div>
+            </div>
+            <div class="mdc-dialog__scrim"></div>
+        </div>
+
+
+
+
+
+
+        <!--
+            Window
+        -->
         <div id="settings_app_window">
-            <header id="app_header">
+            <header id="app_header" style="z-index: 99;">
                 <span>Settings</span>
                 <span>
                     <button id="button_settings_window_close" class="button_small"><img src="icons/close_FILL0_wght400_GRAD0_opsz48.svg"></button>
@@ -22,22 +62,85 @@
             <div id="settings">
                 <h3>Colour Scheme</h3>
                 
-                <div id="colour-scheme-selector">
-                    <button id="colour-scheme-sas" class="button-square-large">
-                        <p>Same as System</p>
-                    </button>
+                
+                <!--
+                    Colour scheme
+                -->
+                <div class="mdc-form-field">
+                    <div class="mdc-radio">
+                        <input class="mdc-radio__native-control" type="radio" id="colour-scheme-radio-1" name="colour_scheme_radios" checked>
+                        <div class="mdc-radio__background">
+                        <div class="mdc-radio__outer-circle"></div>
+                        <div class="mdc-radio__inner-circle"></div>
+                        </div>
+                        <div class="mdc-radio__ripple"></div>
+                    </div>
+                    <label for="radio-1">Same as system</label>
 
-                    <button id="colour-scheme-light" class="button-square-large">
-                        <p>Light</p>
-                    </button>
+                    <div class="mdc-radio">
+                        <input class="mdc-radio__native-control" type="radio" id="colour-scheme-radio-2" name="colour_scheme_radios">
+                        <div class="mdc-radio__background">
+                        <div class="mdc-radio__outer-circle"></div>
+                        <div class="mdc-radio__inner-circle"></div>
+                        </div>
+                        <div class="mdc-radio__ripple"></div>
+                    </div>
+                    <label for="radio-1">Light</label>
 
-                    <button id="colour-scheme-dark" class="button-square-large">
-                        <p>Dark</p>
-                    </button>
+                    <div class="mdc-radio">
+                        <input class="mdc-radio__native-control" type="radio" id="colour-scheme-radio-3" name="colour_scheme_radios">
+                        <div class="mdc-radio__background">
+                        <div class="mdc-radio__outer-circle"></div>
+                        <div class="mdc-radio__inner-circle"></div>
+                        </div>
+                        <div class="mdc-radio__ripple"></div>
+                    </div>
+                    <label for="radio-1">Dark</label>
                 </div>
+
+
+                <!--
+                    Theme selection
+                -->
+                <h3>Themes</h3>
+                
+                <div id="themes-list">
+
+                    <div class="mdc-card mdc-card--outlined theme-card">
+                        <div class="mdc-card__media mdc-card__media--16-9" style="background:url('https://cdn.dribbble.com/users/1615584/screenshots/14795728/media/217c90aba448b05c6cab81a6891f071e.jpg?compress=1&resize=400x300');"></div>
+                            <div class="mdc-card-wrapper__text-section">
+
+                                <div class="theme-card__title">Modern</div>
+                                <div class="theme-card__subhead">Default Built in Theme</div>
+
+                            </div>
+
+                            <div class="mdc-card__actions">
+
+                                <button class="mdc-button mdc-card__action mdc-card__action--button">
+                                    <span class="mdc-button__label">Use</span>
+                                    <div class="mdc-button__ripple"></div>
+                                </button>
+                                <button onclick="deleteTheme('modern')" class="mdc-button mdc-card__action mdc-card__action--button">
+                                    <span class="mdc-button__label">Delete</span>
+                                    <div class="mdc-button__ripple"></div>
+                                </button>
+
+                            </div>
+                      </div>
+                      
+                </div>
+
+
+
             </div>
         </div>
         
         <script src="../renderer.js"></script>
+
+        <!-- Material Design Script -->
+        <script>
+            
+        </script>
     </body>
 </html>

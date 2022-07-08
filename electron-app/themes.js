@@ -2,7 +2,13 @@
 const electron = require('electron');
 const path = require('path');
 const fs = require('fs');
-const { log } = require('util');
+const log = require('electron-log');
+
+// Log levels: error, warn, info, verbose, debug, silly
+function Log (content, level = "info") {
+    //log(content, level)
+    console.log(content)
+}
 
 class Themes {
     verifyFiles() {
@@ -10,10 +16,10 @@ class Themes {
         var userDataPath = (electron.app || electron.remote.app).getPath('userData')
         var themesPath = path.join(userDataPath, "themes")
 
-        console.log(`THEMES: Themes folder located at ${themesPath}`)
+        Log(`THEMES: Themes folder located at ${themesPath}`)
 
         // Verify themes folder
-        console.log('THEMES: Verifying themes folder..')
+        Log('THEMES: Verifying themes folder..')
         fs.exists(themesPath, (exists) => {
             if (exists == false) {
                 // Create directory
@@ -22,21 +28,21 @@ class Themes {
                         verifyError = true
                         return console.error(`THEMES: Unable to create themes folder -> ${err}`);
                     }
-                    console.log('THEMES: Themes directory created successfully');
+                    Log('THEMES: Themes directory created successfully');
                 })
             }
         })
 
 
         // Verify that the default theme is installed
-        console.log('THEMES: Verifying default theme is installed..')
+        Log('THEMES: Verifying default theme is installed..')
         fs.exists(path.join(themesPath, "modern"), (exists) => {
             if (exists == false) {
                 fs.mkdir(path.join(themesPath, 'modern'), (err) => {
                     if (err) {
                         return console.error(`THEMES: Unable to create default theme folder -> ${err}`);
                     }
-                    console.log('THEMES: Default theme folder created successfully');
+                    Log('THEMES: Default theme folder created successfully');
                 })
 
                 
@@ -46,24 +52,24 @@ class Themes {
         // Copy default theme json
         fs.copyFile("themes/modern/modern.json", path.join(themesPath, 'modern/modern.json'), (err) => {
             if (err) {
-                return console.log(`THEMES: Unable to copy default theme config -> ${err}`)
+                return Log(`THEMES: Unable to copy default theme config -> ${err}`)
             }
             else {
-                console.log("THEMES: Default theme config loaded onto disk")
+                Log("THEMES: Default theme config loaded onto disk")
             }
         })
 
         // Copy default theme web stylesheet
         fs.copyFile("themes/modern/modern-web.css", path.join(themesPath, 'modern/modern-web.css'), (err) => {
             if (err) {
-                return console.log(`THEMES: Unable to copy default theme stylesheet -> ${err}`)
+                return Log(`THEMES: Unable to copy default theme stylesheet -> ${err}`)
             }
             else {
-                console.log("THEMES: Default theme stylesheet loaded onto disk")
+                Log("THEMES: Default theme stylesheet loaded onto disk")
             }
         })
 
-        console.log('THEMES: Themes verification complete!')
+        Log('THEMES: Themes verification complete!')
     }
 
 
@@ -83,16 +89,16 @@ class Themes {
 
         // Web app stylesheets
         if (type == 'web') {
-            console.log(`THEMES: Web stylesheet located at ${webStylesheetPath}`)
+            Log(`THEMES: Web stylesheet located at ${webStylesheetPath}`)
             return webStylesheetPath
             
             /* Old code: fs.readFile(configFilePath, 'utf8', function (err, data) {
                 if (err) {
-                    return console.log(err)
+                    return Log(err)
                 }
                 json = data
             })            
-            console.log('stylesheet' + path.join(themePath, obj.stylesheets.web))
+            Log('stylesheet' + path.join(themePath, obj.stylesheets.web))
 
             var obj = JSON.parse(json)*/
         }

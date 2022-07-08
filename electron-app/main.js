@@ -4,19 +4,25 @@ const path = require('path')
 const fs = require('fs')
 const Store = require('electron-store')
 const Themes = require('./themes')
-let mainWindow;
+const log = require('electron-log');
+
+// Log levels: error, warn, info, verbose, debug, silly
+function Log (content, level = "info") {
+    console.log(content)
+    //log(content, level)
+}
 
 // Initilize settings object and set defaults if needed
 const store = new Store()
 if (!store.has('defaultTheme')) {
     store.set('defaultTheme', 'modern')
-    console.log('STORE: Created value "defaultTheme".')
+    Log('STORE: Created value "defaultTheme".')
 }
 
 // Set the current theme to the default if user has not selected one
 if (!store.has('selectedTheme')) {
     store.set('selectedTheme', 'modern')
-    console.log('STORE: Created value "selectedTheme".')
+    Log('STORE: Created value "selectedTheme".')
 }
 
 
@@ -77,11 +83,11 @@ const createWindow = () => {
             // Get stylesheet and apply it
             fs.readFile(themes.getThemeStylesheet(theme, "web"), 'utf8', function (err, data) {
                 if (err) {
-                    return console.log(`THEMES: Error loading theme -> ${err}`)
+                    return Log(`THEMES: Error loading theme -> ${err}`)
                 }
 
                 view.webContents.insertCSS(data)
-                console.log(`THEMES: CSS injected`)
+                Log(`THEMES: CSS injected`)
             })
         })
 
@@ -124,11 +130,15 @@ ipcMain.on('minimize', () => {
 const createSettingsWindow = () => {
     global.settingsWin = new BrowserWindow({
         // Note: Any changes to window width/height should be updated in 'main.css'
-        width: 400,
+        width: 600,
         height: 504,
+        minWidth: 300,
+        maxWidth: 1000,
+        minHeight: 500,
+        maxHeight: 500,
         maximizable: false,
         minimizable: false,
-        resizable: false,
+        resizable: true,
         frame: false,
         radii: [8, 8, 8, 8],
         transparent: true,
@@ -147,7 +157,7 @@ const createSettingsWindow = () => {
     let display = screen.getPrimaryDisplay();
     let width = display.bounds.width;
     let height = display.bounds.height;
-    global.settingsWin.setPosition(((width - 500) - 50), ((height - 800) - 50), false)
+    global.settingsWin.setPosition(((width - 700) - 50), ((height - 800) - 50), false)
 
     // Load html code that controls the custom window
     global.settingsWin.loadFile('pages/settings.html')

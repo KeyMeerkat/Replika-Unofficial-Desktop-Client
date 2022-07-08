@@ -4,20 +4,51 @@
 */
 :root {
     --bg-color: #ffffff;
+    --bg-color-layer-1: hsl(0, 0%, 95%);
     --text-color: #000000;
+    --dialog-text-color: #00000099;
     --btn-hover-color: #c6c6c6;
 }
 
 @media screen and (prefers-color-scheme: dark) {
     :root {
         --bg-color: #121212;
+        --bg-color-layer-1: #1f1f1f;
         --text-color: #c8c8c8;
+        --dialog-text-color: #fff9;
         --btn-hover-color: #2a2a2a;
+
+        /* MDC */
+        --mdc-theme-primary: #0080ee;
+        --mdc-theme-secondary: #018786;
     }
 
     #app_header button img {
         filter: invert(100%);
     }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #0000000;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  transition-duration: 0.2s;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
 }
 
 
@@ -42,11 +73,16 @@ body {
     border-style: solid;
     border-width: 1px;
     border-color: #808080;
+    transition-duration: 0.2s !important;
+}
+
+#app_window h1, h2, h3, h4, h5, p, label, span, #settings_app_window h1, h2, h3, h4, h5, p, label, span {
+  transition-duration: 0.2s !important;
 }
 
 #settings_app_window {
-  width: 398px; /* 2px less to allow for border radius */
-  height: 500px;
+  width: auto; /* 2px less to allow for border radius */
+  min-height: 200px;
   overflow: hidden;
   background-color: var(--bg-color);
   color: var(--text-color);
@@ -55,6 +91,18 @@ body {
   border-style: solid;
   border-width: 1px;
   border-color: #808080;
+  transition-duration: 0.2s !important;
+  overflow: auto;
+  min-width: 300px;
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: stretch;
+  justify-content: flex-start;
+  align-items: stretch;
+  max-height: 500px;
+  height: 500px;
 }
 
 #app_header {
@@ -74,6 +122,8 @@ body {
     font-size: 15px;
     user-select: none;
     -webkit-app-region: drag;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
 }
 
 #app_header span {
@@ -126,35 +176,78 @@ body {
 div#settings {
   padding-left: 15px;
   padding-right: 15px;
+  overflow: auto;
+  padding-top: 0px;
+  padding-bottom: 15px;
 }
 
-div#colour-scheme-selector {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  align-content: center;
-  justify-content: space-around;
-  align-items: center;
+div#settings label {
+  color: var(--text-color);
 }
 
-.button-square-large {
-  width: 100px;
-  height: 100px;
-  border: 1px solid gray;
-  border-radius: 10px;
-  background: rgb(255 255 255 / 5%);
-  color: white;
-  margin-right: 8px;
+.mdc-radio .mdc-radio__native-control:enabled:not(:checked)+.mdc-radio__background .mdc-radio__outer-circle {
+  border-color: var(--text-color) !important;
 }
 
-/* Colour schemes */
-#colour-scheme-sas {
-  background: linear-gradient(125deg, rgba(18,18,18,1) 50%, rgba(255,255,255,1) 100%) !important;
+/* Theme cards */
+.theme-card__title {
+  font-family: Roboto, sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-size: 1.25rem;
+  line-height: 2rem;
+  font-weight: 550;
+  letter-spacing: .0125em;
+  text-decoration: inherit;
+  text-transform: inherit;
 }
-#colour-scheme-light {
-  background: #ffffff;
-  color: #121212;
+
+.theme-card__subhead {
+  font-family: Roboto, sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-size: .875rem;
+  line-height: 1.25rem;
+  font-weight: 400;
+  letter-spacing: .0178571429em;
+  text-decoration: inherit;
+  text-transform: inherit;
+  opacity: .6;
 }
+
+.mdc-card-wrapper__text-section:first-child, .mdc-card__media+.mdc-card-wrapper__text-section {
+  padding-top: 16px;
+}
+
+.mdc-card-wrapper__text-section {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.mdc-card .mdc-button {
+  font-weight: 550 !important;
+}
+
+.mdc-card {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  border-color: #808080;
+}
+
+.mdc-button {
+  color: #018786 !important;
+}
+
+/* Dialogs */
+.mdc-button__label {
+  font-weight: 550;
+}
+.mdc-dialog .mdc-dialog__surface {
+  background-color: var(--bg-color-layer-1) !important;
+}
+.mdc-dialog .mdc-dialog__content {
+  color: var(--dialog-text-color);
+}
+
 
 
 
