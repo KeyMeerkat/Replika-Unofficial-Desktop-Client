@@ -1,5 +1,5 @@
 // Inport modules
-const { app, BrowserWindow, BrowserView, ipcMain, screen } = require('electron')
+const { app, BrowserWindow, BrowserView, ipcMain, screen, nativeTheme } = require('electron')
 const path = require('path')
 const fs = require('fs')
 const Store = require('electron-store')
@@ -18,6 +18,10 @@ if (!store.has('defaultTheme')) {
     store.set('defaultTheme', 'modern')
     Log('STORE: Created value "defaultTheme".')
 }
+if (!store.has('colourScheme')) {
+    store.set('colourScheme', 'system')
+    Log('STORE: Created value "colourScheme".')
+}
 
 // Set the current theme to the default if user has not selected one
 if (!store.has('selectedTheme')) {
@@ -25,6 +29,17 @@ if (!store.has('selectedTheme')) {
     Log('STORE: Created value "selectedTheme".')
 }
 
+
+// Set the preferred colour scheme
+if (store.get('colourScheme') == 'system') {
+    nativeTheme.themeSource = 'system'
+}
+if (store.get('colourScheme') == 'light') {
+    nativeTheme.themeSource = 'light'
+}
+if (store.get('colourScheme') == 'dark') {
+    nativeTheme.themeSource = 'dark'
+}
 
 
 // Create window
@@ -181,4 +196,10 @@ ipcMain.on('settings_close', () => {
 ipcMain.on('settings_minimize', () => {
     //BrowserView.getFocusedWindow().minimize();
     global.settingsWin.minimize();
+})
+
+ipcMain.on('restart_app', () => {
+    // Restart app
+    app.relaunch()
+    app.exit()
 })

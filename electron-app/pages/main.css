@@ -19,8 +19,8 @@
         --btn-hover-color: #2a2a2a;
 
         /* MDC */
-        --mdc-theme-primary: #0080ee;
-        --mdc-theme-secondary: #018786;
+        --mdc-theme-primary: #018786;
+        --mdc-theme-secondary: #017979;
     }
 
     #app_header button img {
@@ -171,8 +171,10 @@ body {
 
 
 /*
-  Settings
-*/
+
+      Settings
+
+  */
 div#settings {
   padding-left: 15px;
   padding-right: 15px;
@@ -185,9 +187,39 @@ div#settings label {
   color: var(--text-color);
 }
 
+div#settings h3 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+div#settings h3 span {
+  margin-left: 8px;
+  font-size: 20px;
+}
+
 .mdc-radio .mdc-radio__native-control:enabled:not(:checked)+.mdc-radio__background .mdc-radio__outer-circle {
   border-color: var(--text-color) !important;
 }
+
+
+/* Switch Container */
+.switchContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
 
 /* Theme cards */
 .theme-card__title {

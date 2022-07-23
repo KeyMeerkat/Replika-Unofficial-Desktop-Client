@@ -60,15 +60,23 @@
             </header>
 
             <div id="settings">
-                <h3>Colour Scheme</h3>
+                <!-- MDC Tooltips -->
+                <div id="tooltip-colour-scheme" class="mdc-tooltip" role="tooltip" aria-hidden="true">
+                    <div class="mdc-tooltip__surface mdc-tooltip__surface-animation">
+                      <b>*Changing this setting requires the app to restart to take effect.</b>
+                    </div>
+                  </div>
+                <!--End MDC Tooltips-->
                 
                 
                 <!--
                     Colour scheme
                 -->
+                <h3>Colour Scheme <span class="material-icons" aria-describedby="tooltip-colour-scheme">info</span></h3>
+
                 <div class="mdc-form-field">
                     <div class="mdc-radio">
-                        <input class="mdc-radio__native-control" type="radio" id="colour-scheme-radio-1" name="colour_scheme_radios" checked>
+                        <input class="mdc-radio__native-control" type="radio" onclick="updateColourScheme('system');" id="colour-scheme-radio-system" name="colour_scheme_radios">
                         <div class="mdc-radio__background">
                         <div class="mdc-radio__outer-circle"></div>
                         <div class="mdc-radio__inner-circle"></div>
@@ -78,7 +86,7 @@
                     <label for="radio-1">Same as system</label>
 
                     <div class="mdc-radio">
-                        <input class="mdc-radio__native-control" type="radio" id="colour-scheme-radio-2" name="colour_scheme_radios">
+                        <input class="mdc-radio__native-control" type="radio" onclick="updateColourScheme('light');" id="colour-scheme-radio-light" name="colour_scheme_radios">
                         <div class="mdc-radio__background">
                         <div class="mdc-radio__outer-circle"></div>
                         <div class="mdc-radio__inner-circle"></div>
@@ -88,7 +96,7 @@
                     <label for="radio-1">Light</label>
 
                     <div class="mdc-radio">
-                        <input class="mdc-radio__native-control" type="radio" id="colour-scheme-radio-3" name="colour_scheme_radios">
+                        <input class="mdc-radio__native-control" type="radio" onclick="updateColourScheme('dark');" id="colour-scheme-radio-dark" name="colour_scheme_radios">
                         <div class="mdc-radio__background">
                         <div class="mdc-radio__outer-circle"></div>
                         <div class="mdc-radio__inner-circle"></div>
@@ -103,7 +111,29 @@
                     Theme selection
                 -->
                 <h3>Themes</h3>
+
+                <!-- Toggle using themes or not -->
+                <div class="switchContainer">
+
+                    <label for="basic-switch">Use custom themes</label>
+                    <button id="basic-switch" class="mdc-switch mdc-switch--unselected" type="button" role="switch" aria-checked="false">
+                        <div class="mdc-switch__track"></div>
+                        <div class="mdc-switch__handle-track">
+                            <div class="mdc-switch__handle">
+                            <div class="mdc-switch__shadow">
+                                <div class="mdc-elevation-overlay"></div>
+                            </div>
+                            <div class="mdc-switch__ripple"></div>
+                            </div>
+                        </div>
+                    </button>
+
+                </div>
                 
+                
+
+
+                <!-- TODO: Add custom theme support
                 <div id="themes-list">
 
                     <div class="mdc-card mdc-card--outlined theme-card">
@@ -131,8 +161,7 @@
                       
                 </div>
 
-
-
+                -->
             </div>
         </div>
         
