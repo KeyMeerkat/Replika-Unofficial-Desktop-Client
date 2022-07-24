@@ -6,6 +6,9 @@ const Store = require('electron-store')
 const Themes = require('./themes')
 const log = require('electron-log');
 
+// DEBUG
+//process.traceProcessWarnings = true
+
 // Log levels: error, warn, info, verbose, debug, silly
 function Log (content, level = "info") {
     console.log(content)
@@ -14,6 +17,9 @@ function Log (content, level = "info") {
 
 // Initilize settings object and set defaults if needed
 const store = new Store()
+
+store.set('appDataPath', app.getPath('userData'))
+
 if (!store.has('defaultTheme')) {
     store.set('defaultTheme', 'modern')
     Log('STORE: Created value "defaultTheme".')
@@ -76,6 +82,8 @@ const createWindow = () => {
     // Verify themes
     const themes = new Themes
     themes.verifyFiles()
+    
+    console.log(themes.getInstalledThemes())
     
     // Wait 3 seconds to allow files to be created if needed
     const sleep = (waitTimeInMs) => new Promise(resolve => setTimeout(resolve, waitTimeInMs));

@@ -98,31 +98,59 @@ a.SolidButton-k70ct8-0, li.fhbCQE {
     background-color: #165fcd !important;
 }
 
+/* Password eye button */
+.fJzGCB {
+    color: var(--text-color-primary) !important;
+}
+
+/* Forgot password link */
+.ysZmn {
+    color: var(--text-color-primary) !important;
+}
+
 
 /*
     Chat and messages
 */
 
 /* Chat messages background */
-.jeOjkR {
+.jeOjkR, .gxvpzQ {
     background: var(--bg-color-primary) !important;
 }
 
-/* Replika chat bubble */
+
+/* Replika chat bubble (dark) */
 .faiZcc {
-    background-color: #505050 !important;
+    background-color: #808080 !important;
 }
 .faiZcc > svg {
-    color: #505050 !important;
+    color: #808080 !important;
 }
 
-/* User chat buuble */
+/* User chat buuble (dark) */
 .fqOasY {
     background-color: #002fb2 !important;
 }
 .fqOasY > svg {
     color: #002fb2 !important;
 }
+
+/* Replika chat bubble (light) */
+.fruVce {
+    background-color: #cfcfcf !important;
+}
+.fruVce > svg {
+    color: #cfcfcf !important;
+}
+
+/* User chat bubble (light) */
+.bkfium {
+    background-color: #5280ff !important;
+}
+.bkfium > svg {
+    color: #5280ff !important;
+}
+
 
 /* Input background */
 .kvjOkJ, .hodOVu, .kvdPWV, .cIjITQ {
@@ -133,6 +161,14 @@ a.SolidButton-k70ct8-0, li.fhbCQE {
 /* Suggestion bubbles */
 .kWZNWV {
     background-color: var(--bg-color-on-primary) !important;
+    color: var(--text-color-primary) !important;
+}
+
+/* Message ratings */
+.bfMODk::before {
+    background-color: var(--bg-color-on-primary) !important;
+}
+.bfMODk {
     color: var(--text-color-primary) !important;
 }
 

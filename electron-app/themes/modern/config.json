@@ -1,6 +1,8 @@
 {
   "name": "Modern",
   "version": "1.0.0",
+  "banner": "banner.png",
+  "description": "A clean, simple, and modern theme that enhances the Replika interface.",
   "stylesheets": {
     "web": "modern-web.css",
     "app": "__NONE__"

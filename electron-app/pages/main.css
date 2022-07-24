@@ -197,8 +197,10 @@ div#settings h3 {
 }
 
 div#settings h3 span {
-  margin-left: 8px;
-  font-size: 20px;
+  
+margin-left: 8px;
+  
+font-size: 20px;
 }
 
 .mdc-radio .mdc-radio__native-control:enabled:not(:checked)+.mdc-radio__background .mdc-radio__outer-circle {
@@ -222,6 +224,17 @@ div#settings h3 span {
 
 
 /* Theme cards */
+#themes-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  padding-top: 8px;
+  margin-top: 10px;
+}
+
 .theme-card__title {
   font-family: Roboto, sans-serif;
   -moz-osx-font-smoothing: grayscale;
@@ -263,10 +276,17 @@ div#settings h3 span {
 .mdc-card {
   background-color: rgba(255, 255, 255, 0.05) !important;
   border-color: #808080;
+  max-width: 350px;
+  max-height: 350px;
 }
 
 .mdc-button {
   color: #018786 !important;
+}
+
+.mdc-card__media {
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
 }
 
 /* Dialogs */
